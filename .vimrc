@@ -1,71 +1,54 @@
-" Use Vim settings, rather than Vi settings (much better!).
-" This must be first, because it changes other options as a side effect.
-set nocompatible
+" set indentation rules
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set expandtab
 
-" allow backspacing over everything in insert mode
-set backspace=indent,eol,start
+" highlight column 80 
+set colorcolumn=80
+highlight ColorColumn ctermbg=darkgray
 
-set history=50		" keep 50 lines of command line history
-set ruler		" show the cursor position all the time
-set showcmd		" display incomplete commands
-set incsearch		" do incremental searching
-set number              " show line numbers
-set ignorecase          " ignore case when searching
-set smartcase           " no ignorecase if Uppercase char present
-filetype on         " detect type of file
-filetype indent on      " load indent file for specific file type
+"syntax highlighting
+syntax on
 
-set visualbell t_vb=    " turn off error beep/flash
+" add c++ includes file to path
+let &path.="src/include,/usr/include/c++/4.2.1"
 
-" CTRL-U in insert mode deletes a lot.  Use CTRL-G u to first break undo,
-" so that you can undo CTRL-U after inserting a line break.
-inoremap <C-U> <C-G>u<C-U>
+" you complete me conf
+let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py"
 
-" In many terminal emulators the mouse works just fine, thus enable it.
-if has('mouse')
-  set mouse=a
-endif
+" pathogen
+execute pathogen#infect()
 
+" Enable filetype plugins
+filetype plugin on
 
-  " Also switch on highlighting the last used search pattern.
-  set hlsearch
+" turn on numbers
+set number
 
-  set autoindent		" always set autoindenting on
+" turn on ruler
+set ruler
 
-" Convenient command to see the difference between the current buffer and the
-" file it was loaded from, thus the changes you made.
-" Only define it when not defined already.
-if !exists(":DiffOrig")
-  command DiffOrig vert new | set bt=nofile | r ++edit # | 0d_ | diffthis
-		  \ | wincmd p | diffthis
-endif
+" use NERDTREE automatically
+autocmd vimenter * NERDTree
+" Jump to the main window
+autocmd VimEnter * wincmd p
+" close NERDTREE if it is the last one open
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
-if has('langmap') && exists('+langnoremap')
-  " Prevent that the langmap option applies to characters that result from a
-  " mapping.  If unset (default), this may break plugins (but it's backward
-  " compatible).
-  set langnoremap
-endif
+" terraform-vim
+let g:terraform_fmt_on_save=1
+let g:terraform_align=1
+let g:terraform_remap_spacebar=1
 
+" vim-go settings
+set autowrite
 
-" Add optional packages.
-"
-" The matchit plugin makes the % command work better, but it is not backwards
-" compatible.
-packadd matchit
+map <C-n> :cnext<CR>
+map <C-m> :cprevious<CR>
 
-" Treat all numerals as decimal, regardless of wheter they are padded with
-" zeros.
-set nrformats=
+autocmd FileType go nmap <leader>b <Plug>(go-build)
+autocmd FileType go nmap <leader>r <Plug>(go-run)
 
-" Switch syntax highlighting on when the terminal has colors or when using the
-" GUI (which always has colors).
-if &t_Co > 2 || has("gui_running")
-  syntax on
+let g:go_fmt_command = "goimports"
 
-    " Also switch on highlighting the last used search pattern.
-      set hlsearch
-
-        " I like highlighting strings inside C comments.
-	  let c_comment_strings=1
-	  endif
