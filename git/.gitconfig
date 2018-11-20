@@ -1,0 +1,6 @@
+[user]
+  name = Richard Laub
+  email = RichardWLaub@gmail.com
+[core]
+  editor = vim
+  pager = less -R

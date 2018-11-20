@@ -1,0 +1,9 @@
+[submodule "vim/.vim/bundle/nerdtree"]
+	path = vim/.vim/bundle/nerdtree
+	url = https://github.com/scrooloose/nerdtree.git
+[submodule "vim/.vim/bundle/tsuquyomi"]
+	path = vim/.vim/bundle/tsuquyomi
+	url = https://github.com/Quramy/tsuquyomi.git
+[submodule "typescript-vim"]
+	path = vim/.vim/bundle/typescript-vim
+	url = https://github.com/leafgarland/typescript-vim.git
