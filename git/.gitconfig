@@ -3,4 +3,15 @@
   email = RichardWLaub@gmail.com
 [core]
   editor = vim
+  excludesFile = $HOME/.gitignore_global
   pager = less -R
+[hub]
+  host = ghe.nebulaworks.com
+[filter "lfs"]
+  clean = git-lfs clean -- %f
+  smudge = git-lfs smudge -- %f
+  process = git-lfs filter-process
+  required = true
+[alias]
+  pr = "!f() { exec vsts code pr \"$@\"; }; f"
+  repo = "!f() { exec vsts code repo \"$@\"; }; f"
