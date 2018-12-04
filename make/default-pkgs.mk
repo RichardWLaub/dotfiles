@@ -1,3 +1,3 @@
+chunkwm
 git
 tmux
-vim
