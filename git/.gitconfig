@@ -15,3 +15,13 @@
 [alias]
   pr = "!f() { exec vsts code pr \"$@\"; }; f"
   repo = "!f() { exec vsts code repo \"$@\"; }; f"
+[diff]
+    tool = kitty
+    guitool = kitty.gui
+[difftool]
+    prompt = false
+    trustExitCode = true
+[difftool "kitty"]
+    cmd = kitty +kitten diff $LOCAL $REMOTE
+[difftool "kitty.gui"]
+    cmd = kitty kitty +kitten diff $LOCAL $REMOTE
