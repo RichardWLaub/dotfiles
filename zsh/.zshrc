@@ -45,3 +45,6 @@ source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.
 
 # Aliases
 alias cpwd='pwd|pbcopy'
+
+# Add node 10 to path for pulumi
+export PATH="/usr/local/opt/node@10/bin:$PATH"
