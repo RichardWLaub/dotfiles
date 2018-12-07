@@ -1,3 +1,4 @@
 chunkwm
 git
 tmux
+zsh
