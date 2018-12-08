@@ -3,7 +3,7 @@
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/richardlaub/.oh-my-zsh
+export ZSH=$HOME/.oh-my-zsh
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -36,16 +36,19 @@ export LESS_TERMCAP_me=$'\e[0m'              # reset bold/blink
 export LESS_TERMCAP_se=$'\e[0m'              # reset reverse video
 export LESS_TERMCAP_ue=$'\e[0m'              # reset underline
 
-# Auto-complete
-source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-# gcloud auto-complete
-source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc'
-source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc'
+# MacOS Specifics
+if [[ "$(uname)" == 'Darwin' ]]; then
+
+    # Auto-completion
+    source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+    source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc'
+    source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc'
+
+    # Add node 10 to path for Pulumi
+    export PATH="/usr/local/opt/node@10/bin:$PATH"
+fi
 
 # Aliases
 alias cpwd='pwd|pbcopy'
 alias kdiff='git difftool --no-symlinks --dir-diff'
-
-# Add node 10 to path for pulumi
-export PATH="/usr/local/opt/node@10/bin:$PATH"
