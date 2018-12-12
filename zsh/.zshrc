@@ -52,3 +52,6 @@ fi
 # Aliases
 alias cpwd='pwd|pbcopy'
 alias kdiff='git difftool --no-symlinks --dir-diff'
+
+# This makes `brew doctor` happy
+export PATH="/usr/local/sbin:$PATH"
