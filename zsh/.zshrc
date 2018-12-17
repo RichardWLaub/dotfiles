@@ -16,7 +16,7 @@ ZSH_THEME="avit"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(z)
+plugins=(kube-ps1 z)
 # plugins=(git history docker kube-ps1 kubectl osx vault z)
 
 source $ZSH/oh-my-zsh.sh
@@ -52,6 +52,7 @@ fi
 # Aliases
 alias cpwd='pwd|pbcopy'
 alias kdiff='git difftool --no-symlinks --dir-diff'
+alias git-rename='git reset HEAD~1 --soft; git cz'
 
 # This makes `brew doctor` happy
 export PATH="/usr/local/sbin:$PATH"
