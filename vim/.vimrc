@@ -4,7 +4,7 @@ set softtabstop=4
 set shiftwidth=4
 set expandtab
 
-" highlight column 80 
+" highlight column 80
 set colorcolumn=80
 highlight ColorColumn ctermbg=darkgray
 
@@ -52,3 +52,25 @@ autocmd FileType go nmap <leader>b <Plug>(go-build)
 autocmd FileType go nmap <leader>r <Plug>(go-run)
 
 let g:go_fmt_command = "goimports"
+
+" remove trailing white space
+autocmd BufWritePre * %s/\s\+$//e
+
+" typescript autocomplete
+if !exists("g:ycm_semantic_triggers")
+ let g:ycm_semantic_triggers = {}
+ endif
+ let g:ycm_semantic_triggers['typescript'] = ['.']
+
+" single quotes over double quotes
+" " Prettier default: false
+let g:prettier#config#config_precedence = 'file-override'
+let g:prettier#config#single_quote = 'true'
+
+" none|es5|all
+" Prettier default: none
+let g:prettier#config#trailing_comma = 'none'
+
+" print spaces between brackets
+" Prettier default: true
+let g:prettier#config#bracket_spacing = 'true'
