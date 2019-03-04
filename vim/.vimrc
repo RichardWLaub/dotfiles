@@ -29,6 +29,8 @@ set number
 " turn on ruler
 set ruler
 
+" toggle NERDTree
+map <C-t> :NERDTreeToggle<CR>
 " use NERDTREE automatically
 autocmd vimenter * NERDTree
 " Jump to the main window
@@ -61,6 +63,9 @@ if !exists("g:ycm_semantic_triggers")
  let g:ycm_semantic_triggers = {}
  endif
  let g:ycm_semantic_triggers['typescript'] = ['.']
+
+"GoTo command
+nnoremap <leader>jd :YcmCompleter GoTo<CR>
 
 " single quotes over double quotes
 " " Prettier default: false
