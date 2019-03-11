@@ -55,6 +55,10 @@ alias cpwd='pwd|pbcopy'
 alias kdiff='git difftool --no-symlinks --dir-diff'
 alias git-rename='git reset HEAD~1 --soft; git cz'
 alias random-colors='wal --theme random && kitty @ --to unix:/tmp/mykitty set-colors ~/.cache/wal/colors-kitty.conf'
+if [[ "$(uname)" == 'Linux' ]]; then
+  alias pbcopy='xclip -selection clipboard'
+  alias pbpaste='xclip -selection clipboard -o'
+fi
 
 # This makes `brew doctor` happy
 export PATH="/usr/local/sbin:$PATH"
