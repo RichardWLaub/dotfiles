@@ -22,3 +22,6 @@
 [submodule "vim/.vim/bundle/vim-prettier"]
 	path = vim/.vim/bundle/vim-prettier
 	url = https://github.com/prettier/vim-prettier.git
+[submodule "qutebrowser/.config/solarized-everything-css"]
+	path = qutebrowser/.config/solarized-everything-css
+	url = https://github.com/alphapapa/solarized-everything-css.git
