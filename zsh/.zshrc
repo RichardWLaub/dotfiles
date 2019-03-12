@@ -62,3 +62,8 @@ fi
 
 # This makes `brew doctor` happy
 export PATH="/usr/local/sbin:$PATH"
+
+# add Pulumi to the PATH
+if [[ "$(uname)" == 'Linux' ]]; then
+  export PATH=$PATH:$HOME/.pulumi/bin
+fi
