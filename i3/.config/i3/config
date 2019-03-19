@@ -33,6 +33,10 @@ font pango:monospace 8
 bindsym $mod+m exec echo "connect $(echo 'devices' | bluetoothctl | grep 'Device.*Mouse' | awk '{print $2}')" | bluetoothctl
 bindsym $mod+shift+m exec echo "disconnect $(echo 'devices' | bluetoothctl | grep 'Device.*Mouse' | awk '{print $2}')" | bluetoothctl
 
+# connect airpods
+bindsym $mod+p exec echo "connect $(echo 'devices' | bluetoothctl | grep 'Device.*AirPods' | awk '{print $2}')" | bluetoothctl
+bindsym $mod+shift+p exec echo "disconnect $(echo 'devices' | bluetoothctl | grep 'Device.*AirPods' | awk '{print $2}')" | bluetoothctl
+
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
