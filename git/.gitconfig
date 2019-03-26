@@ -1,12 +1,12 @@
 [user]
   name = Richard Laub
   email = RichardWLaub@gmail.com
+[includeIf "gitdir:/Users/richard.laub/"]
+  path = ~/.gitconfig.work
 [core]
   editor = vim
   excludesFile = $HOME/.gitignore_global
   pager = less -R
-[hub]
-  host = ghe.nebulaworks.com
 [filter "lfs"]
   clean = git-lfs clean -- %f
   smudge = git-lfs smudge -- %f
