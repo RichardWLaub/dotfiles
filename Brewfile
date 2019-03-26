@@ -1,0 +1,15 @@
+tap 'koekeishiya/formulae'
+
+brew 'chunkwm'
+brew 'npm'
+brew 'pulumi'
+brew 'reattach-to-user-namespace'
+brew 'skhd'
+brew 'stow'
+brew 'tldr'
+brew 'tmux'
+brew 'zsh-autosuggestions'
+
+cask 'google-cloud-sdk'
+cask 'kitty'
+cask 'qutebrowser'
