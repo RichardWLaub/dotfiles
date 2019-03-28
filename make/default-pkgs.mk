@@ -2,6 +2,7 @@ chunkwm
 git
 i3
 kitty
+ncmpcpp
 qutebrowser
 tmux
 vim
