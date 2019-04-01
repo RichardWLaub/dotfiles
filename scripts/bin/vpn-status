@@ -1,0 +1,6 @@
+#!/usr/bin/osascript
+tell application "System Events" to tell process "GlobalProtect"
+    set x to help of menu bar item 1 of menu bar 2
+end tell
+
+do shell script "echo " & x

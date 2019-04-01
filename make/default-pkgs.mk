@@ -4,6 +4,7 @@ i3
 kitty
 ncmpcpp
 qutebrowser
+scripts
 tmux
 vim
 zsh

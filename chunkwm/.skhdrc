@@ -87,6 +87,9 @@
 alt - m : blueutil --connect "Magic Mouse"
 alt + shift - m : blueutil --disconnect "Magic Mouse"
 
+# toggle vpn
+alt + shift - v : ~/bin/vpn-toggle
+
 # open terminal, blazingly fast compared to iTerm/Hyper
 cmd - return : /Applications/Kitty.app/Contents/MacOS/kitty --single-instance -d ~ --listen-on unix:/tmp/mykitty
 

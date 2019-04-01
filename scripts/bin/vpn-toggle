@@ -1,0 +1,7 @@
+#!/usr/bin/osascript
+tell application "System Events" to tell process "GlobalProtect"
+    tell (menu bar item 1 of menu bar 2)
+        click
+        key code 36
+    end tell
+end tell
