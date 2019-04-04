@@ -1,0 +1,69 @@
+#!/bin/bash
+
+########
+# brew #
+########
+
+if hash brew 2>/dev/null; then
+  echo "🍺  Homebrew"
+  brew update
+  brew upgrade
+  brew cask outdated | cut -f 1 | xargs brew cask reinstall
+  echo ""
+
+  echo "👨‍⚕  ️The Doc is checking that everything is ok."
+  brew doctor
+  brew missing
+  echo ""
+
+  if [[ $1 == "cleanup" ]]; then
+    echo "🌬   Cleaning brewery"
+    brew cleanup -s
+  fi
+fi
+
+#######
+# mas #
+#######
+
+if hash mas 2>/dev/null; then
+  echo "🍏  Mac App Store updates come fast as lightning"
+  # only ask about `mas upgrade` if `mas outdated` returns something
+  if [ ! -z "$(mas outdated)" ]; then
+    mas upgrade
+  fi
+  echo ""
+fi
+
+#######
+# npm #
+#######
+
+if hash npm 2>/dev/null; then
+    echo "💊  Upgrade npm itself"
+    npm install npm@latest -g
+    echo ""
+
+    echo "🔊  npm list global outdated"
+    npm outdated -g --depth=0
+    echo ""
+
+    echo "📦  npm upgrade running ..."
+    npm update -g
+    echo ""
+
+    if [[ $1 == "cleanup" ]]; then
+      if printf '%s\n%s\n' "$(npm --version)" 5.0.0 | sort --version-sort --check=silent; then
+        echo "🌬   Cleaning npm cache"
+        npm cache clean
+      fi
+    fi
+
+    echo "🔍   Verifying npm cache"
+    npm cache verify
+
+    echo "👨‍⚕️   Running npm health check"
+    npm doctor
+fi
+
+# Source: https://github.com/welcoMattic/kymsu
