@@ -11,6 +11,7 @@ brew 'cjbassi/gotop/gotop'
 brew 'cmake'
 brew 'dep'
 brew 'gnu-sed'
+brew 'grip'
 brew 'istioctl'
 brew 'jq'
 brew 'koekeishiya/formulae/chunkwm', args: ['HEAD']
