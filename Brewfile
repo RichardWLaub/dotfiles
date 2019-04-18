@@ -31,6 +31,7 @@ brew 'pidof'
 brew 'pulumi'
 brew 'reattach-to-user-namespace'
 brew 'sambadevi/powerlevel9k/powerlevel9k'
+brew 'shellcheck'
 brew 'sops'
 brew 'stow'
 brew 'terraform'
@@ -149,6 +150,7 @@ brew 'xz' # [required by: python, the_silver_searcher]
 brew 'zsh' # [required by: sambadevi/powerlevel9k/powerlevel9k]
 
 cask 'docker'
+cask 'duet'
 cask 'google-cloud-sdk'
 cask 'kitty'
 cask 'minikube'
