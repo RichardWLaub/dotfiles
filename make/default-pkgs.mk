@@ -7,4 +7,5 @@ qutebrowser
 scripts
 tmux
 vim
+x
 zsh
