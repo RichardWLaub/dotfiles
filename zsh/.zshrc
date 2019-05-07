@@ -62,6 +62,8 @@ fi
 export PATH="/usr/local/sbin:$PATH"
 
 # add Pulumi to the PATH
-if [[ "$(uname)" == 'Linux' ]]; then
-  export PATH=$PATH:$HOME/.pulumi/bin
-fi
+# comment out conditional until the following gets resolved:
+# https://github.com/Homebrew/homebrew-core/pull/39551
+#if [[ "$(uname)" == 'Linux' ]]; then
+  export PATH=$HOME/.pulumi/bin:$PATH
+#fi
