@@ -65,3 +65,6 @@ export PATH="/usr/local/sbin:$PATH"
 if [[ "$(uname)" == 'Linux' ]]; then
   export PATH=$HOME/.pulumi/bin:$PATH
 fi
+
+# Add npm packages to home
+export PATH=$HOME/.npm-packages/bin:$PATH

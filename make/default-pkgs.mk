@@ -3,6 +3,7 @@ git
 i3
 kitty
 ncmpcpp
+npm
 qutebrowser
 scripts
 tmux
