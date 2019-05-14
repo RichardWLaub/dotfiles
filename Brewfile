@@ -164,5 +164,6 @@ cask 'postman'
 cask 'powershell'
 cask 'qutebrowser' # https://github.com/qutebrowser/qutebrowser/issues/4067
 cask 'ubersicht'
+cask 'vagrant'
 cask 'virtualbox'
 cask 'visual-studio-code'
