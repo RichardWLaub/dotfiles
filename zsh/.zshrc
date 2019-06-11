@@ -68,3 +68,7 @@ fi
 
 # Add npm packages to home
 export PATH=$HOME/.npm-packages/bin:$PATH
+
+. "$HOME/.okta/bash_functions"
+PATH="$HOME/.okta/bin:$PATH"
+
