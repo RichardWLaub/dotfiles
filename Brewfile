@@ -8,6 +8,7 @@ tap 'sambadevi/powerlevel9k'
 tap 'weaveworks/tap'
 
 brew 'aws-okta'
+brew 'aws-shell'
 brew 'awscli'
 brew 'azure-cli'
 brew 'blueutil'

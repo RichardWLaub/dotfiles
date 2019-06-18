@@ -15,7 +15,7 @@ ZSH_THEME="powerlevel9k/powerlevel9k"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(kube-ps1 z)
+plugins=(aws kube-ps1 z)
 # plugins=(git history docker kube-ps1 kubectl osx vault z)
 
 source $ZSH/oh-my-zsh.sh
