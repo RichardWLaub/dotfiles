@@ -25,3 +25,6 @@
 [submodule "qutebrowser/.config/solarized-everything-css"]
 	path = qutebrowser/.config/solarized-everything-css
 	url = https://github.com/alphapapa/solarized-everything-css.git
+[submodule "zsh/.powerlevel10k"]
+	path = zsh/.powerlevel10k
+	url = https://github.com/romkatv/powerlevel10k.git
