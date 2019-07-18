@@ -1,4 +1,3 @@
-chunkwm
 git
 i3
 kitty
@@ -9,4 +8,5 @@ scripts
 tmux
 vim
 x
+yabai
 zsh

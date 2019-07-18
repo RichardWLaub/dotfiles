@@ -25,7 +25,7 @@ brew 'hadolint'
 brew 'ipcalc'
 brew 'istioctl'
 brew 'jq'
-brew 'koekeishiya/formulae/chunkwm', args: ['HEAD']
+brew 'koekeishiya/formulae/yabai', args: ['HEAD']
 brew 'koekeishiya/formulae/skhd'
 brew 'kubectl'
 brew 'kubectx'
