@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 
 # bar settings
 yabai -m config status_bar                   on
@@ -7,12 +7,11 @@ yabai -m config status_bar_icon_font         "FontAwesome:Regular:12.0"
 yabai -m config status_bar_background_color  0xff202020
 yabai -m config status_bar_foreground_color  0xffa8a8a8
 yabai -m config status_bar_space_icon_strip  I II III IV V VI VII VIII IX X
-yabai -m config status_bar_power_icon_strip   
-yabai -m config status_bar_space_icon        
-yabai -m config status_bar_clock_icon        
+yabai -m config status_bar_power_icon_strip  ⚡️ ⚡️
+yabai -m config status_bar_space_icon        💻
 
 # global settings
-yabai -m config mouse_follows_focus          off
+yabai -m config mouse_follows_focus          on
 yabai -m config focus_follows_mouse          off
 yabai -m config window_placement             second_child
 yabai -m config window_topmost               off
@@ -38,5 +37,19 @@ yabai -m config bottom_padding               20
 yabai -m config left_padding                 20
 yabai -m config right_padding                20
 yabai -m config window_gap                   10
+
+update_clock_loop() {
+    declare -A emojis
+    emojis=( ["1"]=🕐 ["2"]=🕑 ["3"]=🕒 ["4"]=🕓 ["5"]=🕔 ["6"]=🕕 ["7"]=🕖
+             ["8"]=🕗 ["9"]=🕘 ["10"]=🕙 ["11"]=🕚 ["12"]=🕛 )
+    frequency=300
+    while true; do
+        yabai -m config status_bar_clock_icon "${emojis[$(date +'%l')]}"
+
+        # wait 5 minute
+        sleep $frequency
+    done
+}
+update_clock_loop
 
 echo "yabai configuration loaded.."
