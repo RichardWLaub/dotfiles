@@ -39,7 +39,7 @@ yabai -m config right_padding                20
 yabai -m config window_gap                   10
 
 update_clock_loop() {
-    declare -A emojis
+    declare -a emojis
     emojis=( ["1"]=🕐  ["130"]=🕜  ["2"]=🕑  ["230"]=🕝  ["3"]=🕒  ["330"]=🕞
              ["4"]=🕓  ["430"]=🕟  ["5"]=🕔  ["530"]=🕠  ["6"]=🕕  ["630"]=🕡
              ["7"]=🕖  ["730"]=🕢  ["8"]=🕗  ["830"]=🕣  ["9"]=🕘  ["930"]=🕤
@@ -58,6 +58,6 @@ update_clock_loop() {
     done
 }
 
-update_clock_loop
+update_clock_loop &
 
 echo "yabai configuration loaded.."
