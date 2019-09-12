@@ -76,3 +76,4 @@ fi
 
 source ~/.powerlevel10k/powerlevel10k.zsh-theme
 source ~/.purepower
+export PATH="/usr/local/opt/go@1.12/bin:$PATH"
